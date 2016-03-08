@@ -1,0 +1,105 @@
+#Scott Cagnard---Assignment 3-----Part 2
+
+#Exercise 3.1
+
+DNA1 = input("Enter a DNA string")
+DNA2 = input("Enter a second DNA string")         #Acquire two DNA strings from the user
+
+print("\n\n")  # print a couple of blank lines
+input("Press any key to find the amount of matches between the two strings")
+print("\n\n")  # print a couple of blank lines
+
+count = 0                  #Set variable count equal to zero
+
+for i, j in zip(DNA1, DNA2):   #Create a for loop with i detecing each character in string DNA1, and j detecting each character in string DNA2
+    if i == j:        #Create if statement with condition i is equal to j
+        count += 1   #Every time i is equal to j, add one to the variable count
+    else:     #If i is not equal to j, do nothing
+        pass
+
+print(count)     #Print the value of the variable count
+
+print("\n\n")  # print a couple of blank lines
+input("Press any key to continue")
+print("\n\n")  # print a couple of blank lines
+
+#Exercise 3.2
+
+DNA1 = input("Enter a DNA string")
+DNA22 = input("Enter a second DNA string")          #Acquire two DNA strings from the user
+
+print("\n\n")  # print a couple of blank lines
+input("Press any key to find the length of the longest matching subsequence between the two strings")
+print("\n\n")  # print a couple of blank lines
+
+count1 = 0            #Set variable count1 equal to zero
+
+for i, j in zip(DNA1, DNA2):   #Detect each character in strings DNA1 and DNA2
+    if i == j:               #If i is equal to j, add one to the variable count1
+        count1 += 1
+        print(count1)
+    else:            #If i is not equal to j, set variable count1 equal to zero
+        count1 = 0        #This cases a new counter to start so we can keep track of how long both strings are matching for
+        print(count1)
+
+print("The highest number in the list above represents the longest length of matching subsequences within the two strings")
+
+print("\n\n")  # print a couple of blank lines
+input("Press any key to continue")
+print("\n\n")  # print a couple of blank lines
+
+#Exercise 3.3
+
+ref1 = "GCTCAAGCCTAGCTACTAGCAGTT"
+
+ref2 = "ACTCAAGCATAGCTCCATGCGTTCA"
+
+ref3 = " AGCTAAGCTTAGCTCCATGCG"           #Set three reference strings to its respective variables
+
+DNA = input("Enter a DNA chain")       #Acquire a DNA string from the user
+
+count = 0                       #Set variable count equal to zero
+
+for i in DNA:
+    if i == "A" or  i == "T" or i == "G" or i == "C":    #This for loop will determine if each character in DNA is equal to "A", "T", "C", or "G"
+        count += 1           #If condition is true, add one to variable count
+    else:        #If condition is false, do nothing
+        pass
+
+if count == len(DNA):    #Create an if statement with condition count equaling the length of string DNA
+    print("Valid")          #This means we have a valid DNA string
+    input("Hit any key to get reference string")
+    count1 = 0                 #Set variable count1 equal to zero
+
+    for i, j in zip(DNA, ref1):      #Detect each character in DNA and ref1
+        if i == j:
+            count1 += 1    #This will calculate the total number of matches between DNA and ref1
+        else:
+            pass
+
+    count2 = 0       #Set variable count2 equal to zero
+
+    for i, j in zip(DNA, ref2):     #Detect each character in y and ref2
+        if i == j:
+            count2 += 1     #This will calcualte the total number of matches between DNA and ref2
+        else:
+            pass
+
+    count3 = 0         #Set variable count3 equal to zero
+
+    for i, j in zip(DNA, ref3): #Detect each character in DNA and ref3
+        if i == j:
+            count3 += 1      #This will calcualte the total number of amtches between y and ref3
+        else:
+            pass
+
+    if count1 > count2 and count1 > count3:  #If count1 has the biggest value, print ref1
+        print(ref1)
+    elif count2 > count1 and count2 > count3:   #If count2 has the biggest value, print ref2
+        print(ref2)
+    else:             #If count3 has the biggest values, print ref3
+        print(ref3) 
+else:
+    print("Invalid")     #Otherwise, it is an invalid DNA string
+
+

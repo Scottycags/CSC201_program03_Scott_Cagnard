@@ -1,0 +1,91 @@
+#Exercise 2.1
+
+DNA = input("Enter a DNA string")   #Acquire a DNA string from the user of characters "A", "T", "G", or "C"
+print(DNA)                 #Print the DNA string
+
+print("\n\n")  # print a couple of blank lines
+input("Press any key to get mirror image") #Hit any key to produce the mirror image of the DNA string
+
+DNA1 = DNA.replace("A", "%temp%").replace("T", "A").replace("%temp%", "T").replace("C", "x").replace("G", "C").replace("x", "G")
+print(DNA1)        #Take the entered string and replace "A" with "T", replace "T" with "A", replace "C" with "G", replace "G" with "C", and print the new modified string
+
+print("\n\n")  # print a couple of blank lines
+input("Press any key to continue")
+print("\n\n")  # print a couple of blank lines
+
+#Exercise 2.2
+
+DNA = input("Enter a DNA string")     #Acquire a new DNA string from the user
+print(DNA)                          #Print the new DNA string
+
+print("\n\n")  # print a couple of blank lines
+input("Press and key to get the reverse string")
+print("\n\n")  # print a couple of blank lines
+
+xDNA = DNA[::-1]        #Print the string backwards in order to get the reverse string
+print(xDNA)        #Print the reversed string
+
+print("\n\n")  # print a couple of blank lines
+input("Press any key to continue")
+print("\n\n")  # print a couple of blank lines
+
+#Exercise 2.3
+
+DNA = input("Enter a DNA string to determine its validity")     #Acquire a new DNA string from the user
+
+count = 0    #Set variable count equal to zero
+
+for i in DNA:            #Create a for loop detecting all characters in string DNA
+    if i == "A" or  i == "T" or i == "G" or i == "C":   #Create an if statement with the condition i is equal to "A", "T", "C", or "G"
+        count += 1      #Each time i equals "A", "T", "G", or "C", add one to the variable count
+    else:             #Each time i does not equal "A", "I", "G", or "C", do nothing
+        pass
+
+if count == len(DNA):  #Once the for loop goes through the whole string DNA, if the variable count equals the length of DNA, then we know that the DNA string is valid
+    print("Valid")       #Print Valid
+
+else:          #If the variable count doesn't equal the length of the string, then we know that the DNA string is invalid
+    print("Invalid")      #Print invalid 
+
+print("\n\n")  # print a couple of blank lines
+input("Press any key to continue")
+print("\n\n")  # print a couple of blank lines
+
+#Exercise 2.4
+
+DNA1 = input("Enter a DNA string")
+DNA2 = input("Enter another DNA string to compare the first one to")     #Acquire two new DNA strings from the user
+
+count1 = 0
+count2 = 0      #Set variables count1 and count2 both equal to zero
+
+for i in DNA1:      #Detect each character in string DNA1
+    if i == "A" or  i == "T" or i == "G" or i == "C":   #Create an if statement with the condition i is equal to "A", "T", "C", or "G"
+        count1 += 1   #Each time i equals "A", "T", "G", or "C", add one to the variable count1   
+    else:            #Each time i does not equal "A", "I", "G", or "C", do nothing
+        pass
+
+for i in DNA2:       #Detect each character in string DNA2
+    if i == "A" or  i == "T" or i == "G" or i == "C":     #Create an if statement with the condition i is equal to "A", "T", "C", or "G"
+        count2 += 1  #Each time i equals "A", "T", "G", or "C", add one to the variable count1    
+    else:        #Each time i does not equal "A", "I", "G", or "C", do nothing
+        pass
+
+if count1 == len(DNA1) and count2 == len(DNA2):   #If count1 equals the length of string DNA1 and count2 equals the length of string DNA2, then we know both strings are valid
+    print("Both strings are valid")
+
+else:   #If count1 doesnt equal length of string DNA1 or count2 doesnt equal length of string DNA2 or both, then we know at least one of the strings is invalid
+    print("One or both of the strings are not valid")
+
+DNA3 = DNA1.replace("A", "%temp%").replace("T", "A").replace("%temp%", "T").replace("C", "x").replace("G", "C").replace("x", "G")
+DNA4 = DNA2.replace("A", "%temp%").replace("T", "A").replace("%temp%", "T").replace("C", "x").replace("G", "C").replace("x", "G")
+
+#Find the mirror string of DNA1 and DNA2
+#If DNA1 equals the mirror string of DNA2 or if DNA2 equals the mirror string of DNA1, then we know they are parts of the same DNA fragment
+
+if DNA1 == DNA4 or DNA2 == DNA3:
+    print("These strings are part of the same fragment")
+else:    #If DNA1 doesnt equal the mirror string of DNA2 or if DNA2 doesnt equal the mirror string of DNA1, then we know the strings are not part of the same fragment
+    print("These strings are not part of the same fragment")
+    
+
